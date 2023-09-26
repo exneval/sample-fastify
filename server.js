@@ -2,6 +2,7 @@ import Fastify from "fastify";
 const fastify = Fastify({
   logger: true,
 });
+const { ADDRESS = "localhost", PORT = "3000" } = process.env;
 
 fastify.get("/", async (request, reply) => {
   return { hello: "world" };
@@ -12,7 +13,7 @@ fastify.get("/", async (request, reply) => {
  */
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 });
+    await fastify.listen({ host: ADDRESS, port: parseInt(PORT, 10) });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);

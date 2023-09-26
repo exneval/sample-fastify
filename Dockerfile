@@ -16,5 +16,7 @@ COPY . .
 # Make port 3000 available to the world outside this container
 EXPOSE 3000
 
+ENV ADDRESS=0.0.0.0 PORT=3000
+
 # Start the Fastify application
 CMD ["node", "server.js"]
