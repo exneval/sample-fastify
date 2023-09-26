@@ -1,0 +1,17 @@
+# Ignore development and local files
+node_modules
+npm-debug.log
+yarn-error.log
+*.env
+
+# Ignore version control files
+.git
+.gitignore
+
+# Ignore editor and IDE files
+.vscode
+.idea
+
+# Ignore test files
+__tests__
+test
