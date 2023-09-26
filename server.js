@@ -1,11 +1,13 @@
 import Fastify from "fastify";
+import os from "node:os";
+
 const fastify = Fastify({
   logger: true,
 });
 const { ADDRESS = "localhost", PORT = "3000" } = process.env;
 
 fastify.get("/", async (request, reply) => {
-  return { hello: "world" };
+  return { hello: "world", hostname: os.hostname() };
 });
 
 /**
