@@ -1,16 +1,29 @@
 import Fastify from "fastify";
+import fastifyEnv from "@fastify/env";
 import os from "node:os";
 import { microgen } from "./libs/microgen.js";
 
 const fastify = Fastify({
   logger: true,
 });
-const { ADDRESS = "localhost", PORT = "3000" } = process.env;
+
+const schema = {
+  type: "object",
+  required: ["EMAIL", "PASSWORD"],
+  properties: {
+    EMAIL: {
+      type: "string",
+    },
+    PASSWORD: {
+      type: "string",
+    },
+  },
+};
 
 fastify.get("/", async (request, reply) => {
   const { token, error } = await microgen.auth.login({
-    email: "exneval_rayz@yahoo.co.id",
-    password: "ginting",
+    email: fastify.config.EMAIL,
+    password: fastify.config.PASSWORD,
   });
 
   if (error) {
@@ -25,7 +38,11 @@ fastify.get("/", async (request, reply) => {
  */
 const start = async () => {
   try {
-    await fastify.listen({ host: ADDRESS, port: parseInt(PORT, 10) });
+    await fastify.register(fastifyEnv, { schema });
+    await fastify.listen({
+      host: process.env.ADDRESS,
+      port: parseInt(process.env.PORT, 10),
+    });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
