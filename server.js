@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 import os from "node:os";
-import { microgen } from "./libs/microgen";
+import { microgen } from "./libs/microgen.js";
 
 const fastify = Fastify({
   logger: true,
