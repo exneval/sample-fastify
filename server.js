@@ -38,10 +38,10 @@ fastify.get("/", async (request, reply) => {
  */
 const start = async () => {
   try {
-    await fastify.register(fastifyEnv, { schema });
+    await fastify.register(fastifyEnv, { schema, dotenv: true });
     await fastify.listen({
-      host: process.env.ADDRESS,
-      port: parseInt(process.env.PORT, 10),
+      host: process.env.ADDRESS || "0.0.0.0",
+      port: parseInt(process.env.PORT || 3000, 10),
     });
   } catch (err) {
     fastify.log.error(err);

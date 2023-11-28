@@ -775,10 +775,10 @@ md5.js@^1.3.4:
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
 
-microgen-v3-sdk@^0.10.15:
-  version "0.10.15"
-  resolved "https://registry.yarnpkg.com/microgen-v3-sdk/-/microgen-v3-sdk-0.10.15.tgz#7fd52aa2809c5d6071fb5b5688487d3631c7f272"
-  integrity sha512-rNqksrUx8oFWAY9bjeP05IyXSte5hA0UORDdDFXHazb+ApRexFGaTrM12z3fZDthXKCWrJj+YWJuBmZy8L+DYA==
+microgen-v3-sdk@^0.10.16:
+  version "0.10.16"
+  resolved "https://registry.yarnpkg.com/microgen-v3-sdk/-/microgen-v3-sdk-0.10.16.tgz#b0e43e56106190412464d8f1471a58e84a8e3bee"
+  integrity sha512-QLhGKc24GLTHN5XkbTw7C26EpE0da4KcLOY+4nXX2rcTM3aWSn9L6zMaknzuzV+lgOpICNqXS1pj+WWDr2a/aw==
   dependencies:
     axios "^0.27.2"
     centrifuge "^2.8.5"

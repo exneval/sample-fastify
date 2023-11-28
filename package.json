@@ -12,6 +12,6 @@
   "dependencies": {
     "@fastify/env": "^4.3.0",
     "fastify": "^4.23.2",
-    "microgen-v3-sdk": "^0.10.15"
+    "microgen-v3-sdk": "^0.10.16"
   }
 }
